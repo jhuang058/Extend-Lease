@@ -31,27 +31,32 @@ const reserve = () => {
   }
 };
 
-renderDate();
+document.addEventListener("DOMContentLoaded", function(event) { 
+
+  renderDate();
+});
 
 //match key with name
 let element = document.getElementById("btn1");
-let key = keyNum.value;
-function returnName(key) {
+
+function returnName() {
+  let keyNum = document.getElementById("keyNum");
+  let key = keyNum.value;
   let name;
   let leaseEndDate;
-  if (key == "D1" || "d1") {
+  if (key == "D1" || key == "d1") {
     name = "Josh";
     leaseEndDate = "May 16, 2021";
     document.getElementById(
       "greeting"
     ).innerHTML = `Hi ${name}! \n Your current lease ends on ${leaseEndDate}.`;
-  } else if (key == "D2" || "d2") {
+  } else if (toLowerCase(key) == "d2") {
     name = "Jenn";
     leaseEndDate = "June 1, 2020";
     document.getElementById(
       "greeting"
     ).innerHTML = `Hi ${name}! \n Your current lease ends on ${leaseEndDate}.`;
-  } else if (key == "D3" || "d3") {
+  } else if (key == "D3") {
     name = "Austin";
     leaseEndDate = "June 14, 2020";
     document.getElementById(
@@ -62,4 +67,4 @@ function returnName(key) {
   }
 }
 
-element.addEventListener("click", returnName(key));
+element.addEventListener("click", returnName);
