@@ -33,12 +33,12 @@ const reserve = () => {
 
 document.addEventListener("DOMContentLoaded", function(event) { 
 
+  let element = document.getElementById("btn1");
+  element.addEventListener("click", returnName);
   renderDate();
 });
 
 //match key with name
-let element = document.getElementById("btn1");
-
 function returnName() {
   let keyNum = document.getElementById("keyNum");
   let key = keyNum.value;
@@ -67,4 +67,3 @@ function returnName() {
   }
 }
 
-element.addEventListener("click", returnName);
