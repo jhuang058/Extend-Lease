@@ -50,7 +50,7 @@ function returnName() {
     document.getElementById(
       "greeting"
     ).innerHTML = `Hi ${name}! \n Your current lease ends on ${leaseEndDate}.`;
-  } else if (toLowerCase(key) == "d2") {
+  } else if (key.toLowerCase() == "d2") {
     name = "Jenn";
     leaseEndDate = "June 1, 2020";
     document.getElementById(
